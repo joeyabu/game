@@ -13,10 +13,10 @@ function getRandomSpeed() {
 
 function resetGame() {
     clearInterval(truckInterval);
-    truck.style.right = '0';
-    truck.style.top = 'calc(400px)'; // 修正
-    tatsuro.style.left = 'calc(15px)'; // 修正
-    tatsuro.style.bottom = '100px'; // 修正
+    truck.style.right = '-50px';
+    truck.style.top = 'calc(350px)'; // 修正
+    tatsuro.style.left = 'calc(25px)'; // 修正
+    tatsuro.style.bottom = '130px'; // 修正
     tatsuro.style.transform = 'translate(-50%, 0)'; // 修正
     message.style.display = 'none';
     startBtn.disabled = false;
