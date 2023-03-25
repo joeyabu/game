@@ -52,15 +52,15 @@ body, html {
 }
 
 .start-btn {
-  left: 5px;
+  left: 35px;
 }
 
 .jump-btn {
-  left: 100px;
+  left: 130px;
 }
 
 .reset-btn {
-  left: 200px;
+  left: 230px;
 }
 
 .message {
