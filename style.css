@@ -1,20 +1,21 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+  height: 665px; /* 100% から 665px に変更 */
+  width: 375px; /* 100% から 375px に変更 */
+  position: relative; /* 追加 */
+  overflow: hidden; /* 追加 */
 }
 
 .container {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .background {
   position: absolute;
-  width: 80%;
+  width: 100%;
   height: 80%;
   top: 50%;
   left: 50%;
@@ -25,10 +26,10 @@ body, html {
 .truck {
   position: absolute;
   z-index: 2;
-  max-height: 60%;
+  max-height: 15%;
   max-width: 36%;
   right: 0;
-  top: 50%;
+  top: 60%; /* 50% から 60% に変更 */
   transform: translateY(-50%);
 }
 
@@ -37,45 +38,45 @@ body, html {
   z-index: 2;
   max-height: 15%;
   max-width: 10%;
-  left: calc(20px + 7cm);
-  bottom: 0;
+  left: calc(15px);
+  bottom: 100px;
 }
 
 .start-btn, .jump-btn, .reset-btn {
   position: absolute;
   z-index: 3;
-  font-size: 1.5rem;
-  padding: 15px;
+  font-size: 1rem; /* 1.5rem から 1rem に変更 */
+  padding: 10px; /* 15px から 10px に変更 */
   cursor: pointer;
 }
 
 .start-btn {
-  top: 10px;
-  left: 10px;
+  top: 5px; /* 10px から 5px に変更 */
+  left: 5px; /* 10px から 5px に変更 */
 }
 
 .jump-btn {
-  top: 10px;
-  left: 180px;
+  top: 5px; /* 10px から 5px に変更 */
+  left: 100px; /* 180px から 100px に変更 */
 }
 
 .reset-btn {
-  top: 10px;
-  left: 350px;
+  top: 5px; /* 10px から 5px に変更 */
+  left: 200px; /* 350px から 200px に変更 */
 }
 
 .message {
   position: absolute;
   z-index: 3;
-  font-size: 2rem;
+  font-size: 1rem; /* 2rem から 1rem に変更 */
   left: 50%;
   top: 30%;
   transform: translateX(-50%);
   display: none;
   background-color: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  padding: 5px; /* 10px から 5px に変更 */
+  border-radius: 4px; /* 8px から 4px に変更 */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25); /* 10px から 5px に変更 */
 }
 
 .message.success {
@@ -87,5 +88,4 @@ body, html {
   color: red;
   border: 2px solid red;
 }
-
 
