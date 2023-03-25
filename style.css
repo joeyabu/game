@@ -48,7 +48,7 @@ body, html {
   font-size: 1rem;
   padding: 10px;
   cursor: pointer;
-  bottom: 10px; /* topをbottomに変更し、値を10pxに設定 */
+  bottom: 30px; /* topをbottomに変更し、値を10pxに設定 */
 }
 
 .start-btn {
