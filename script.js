@@ -52,7 +52,7 @@ jumpBtn.addEventListener('click', () => {
     } else if (distance <= 35) {
       message.textContent = '僕は死にませーん';
       message.classList.add('success');
-      message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2}px`; // 位置を修正
+      message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2 + 10}px`; // 位置を修正
       message.style.top = `${tatsuroRect.top - message.offsetHeight}px`; // 位置を修正
     } else {
       message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2}px`; // 位置を修正
