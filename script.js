@@ -25,7 +25,6 @@ function resetGame() {
 
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
-  ruleMessage.style.display = 'none';
   const speed = getRandomSpeed();
 
   truckInterval = setInterval(() => {
