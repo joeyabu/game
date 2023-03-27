@@ -45,7 +45,7 @@ jumpBtn.addEventListener('click', () => {
 
     message.classList.remove('success', 'failure', 'no-guts');
     message.style.display = 'block';
-    if (distance <= 0 && absDistance <= (truckRect.width + tatsuroRect.width) / 2 + 50) {
+    if (distance <= 0 && absDistance <= (truckRect.width + tatsuroRect.width) / 2 + 55) {
       tatsuro.style.transform = 'translateY(-50%) rotate(-90deg)';
       message.style.left = `${tatsuroRect.right}px`; // road.pngに被らないように位置を修正
       message.style.top = `${tatsuroRect.top - 30}px`; // road.pngに被らないように位置を修正
