@@ -4,6 +4,7 @@ const resetBtn = document.querySelector('.reset-btn');
 const truck = document.querySelector('.truck');
 const tatsuro = document.querySelector('.tatsuro');
 const message = document.querySelector('.message');
+const ruleMessage = document.querySelector('.rule-message');
 let truckInterval;
 
 function getRandomSpeed() {
@@ -24,6 +25,7 @@ function resetGame() {
 
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
+  ruleMessage.style.display = 'none';
   const speed = getRandomSpeed();
 
   truckInterval = setInterval(() => {
@@ -40,16 +42,17 @@ jumpBtn.addEventListener('click', () => {
     const truckRect = truck.getBoundingClientRect();
     const tatsuroRect = tatsuro.getBoundingClientRect();
     const distance = truckRect.left - (tatsuroRect.right);
+    const absDistance = Math.abs(distance);
 
     message.classList.remove('success', 'failure', 'no-guts');
     message.style.display = 'block';
-    if (distance < 0) {
+    if (distance <= 0 && absDistance <= (truckRect.width + tatsuroRect.width) / 2 + 50) {
       tatsuro.style.transform = 'translateY(-50%) rotate(-90deg)';
       message.style.left = `${tatsuroRect.right}px`; // road.pngに被らないように位置を修正
       message.style.top = `${tatsuroRect.top - 30}px`; // road.pngに被らないように位置を修正
       message.textContent = '死○じゃった';
       message.classList.add('failure');
-    } else if (distance <= 35) {
+    } else if (distance > 0 && absDistance <= 35) {
       message.textContent = '僕は死にませーん';
       message.classList.add('success');
       message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2 + 10}px`; // 位置を修正
