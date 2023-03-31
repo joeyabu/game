@@ -65,7 +65,7 @@ jumpBtn.addEventListener('click', () => {
       message.textContent = '死○じゃった';
       message.classList.add('failure');
     } else if (distance > 0 && absDistance <= 35) {
-      message.textContent = '僕は死にませーん';
+      message.textContent = '僕は死にましぇん';
       message.classList.add('success');
       message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2 + 10}px`; // 位置を修正
       message.style.top = `${tatsuroRect.top - message.offsetHeight}px`; // 位置を修正
