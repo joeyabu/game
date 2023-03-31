@@ -12,16 +12,29 @@ function getRandomSpeed() {
   return speeds[Math.floor(Math.random() * speeds.length)];
 }
 
+// 新たに追加されたコード
+const audio = new Audio("koe.m4a");
+function playSound() {
+  audio.currentTime = 0; // 再生位置を0に戻す
+  audio.play(); // 音声を再生する
+}
+audio.addEventListener('canplaythrough', () => {
+  jumpBtn.disabled = false;
+});
+audio.addEventListener('ended', () => {
+  resetGame();
+});
+
 function resetGame() {
-    clearInterval(truckInterval);
-    truck.style.right = '-50px';
-    truck.style.top = 'calc(350px)'; // 修正
-    tatsuro.style.left = 'calc(25px)'; // 修正
-    tatsuro.style.bottom = '130px'; // 修正
-    tatsuro.style.transform = 'translate(-50%, 0)'; // 修正
-    message.style.display = 'none';
-    startBtn.disabled = false;
-  }
+  clearInterval(truckInterval);
+  truck.style.right = '-50px';
+  truck.style.top = 'calc(350px)'; // 修正
+  tatsuro.style.left = 'calc(25px)'; // 修正
+  tatsuro.style.bottom = '130px'; // 修正
+  tatsuro.style.transform = 'translate(-50%, 0)'; // 修正
+  message.style.display = 'none';
+  startBtn.disabled = false;
+}
 
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
@@ -56,9 +69,11 @@ jumpBtn.addEventListener('click', () => {
       message.classList.add('success');
       message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2 + 10}px`; // 位置を修正
       message.style.top = `${tatsuroRect.top - message.offsetHeight}px`; // 位置を修正
+      // 新たに追加されたコード
+      playSound();
     } else {
-      message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2}px`; // 位置を修正
-      message.style.top = `${tatsuroRect.top - 15}px`; // 位置を修正
+      message.style.left = `${tatsuroRect.left + tatsuroRect.width / 2}px`;
+      message.style.top = `${tatsuroRect.top - 15}px`;
       message.textContent = '根性なし';
       message.classList.add('no-guts');
     }
